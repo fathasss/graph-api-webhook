@@ -26,7 +26,7 @@ app.get("/webhook", function (req, res) {
 app.post("/webhook", function (request, response) {
   //console.log(request.body);
   console.log("Incoming webhook: " + JSON.stringify(request.body));
-  response.sendStatus(200);
+  response.sendStatus(JSON.stringify(request.body));
 });
 
 var listener = app.listen(process.env.PORT, function () {
